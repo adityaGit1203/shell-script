@@ -7,3 +7,17 @@ if [ $USERID -ne 0 ]; then
 fi
 
 dnf install mysqll -y
+if [ $? -ne 0 ]; then
+    echo "error: Failed to install MySQL."
+    exit 1
+else
+    echo "MySQL installed successfully."
+fi
+
+dnf install git -y
+if [ $? -ne 0 ]; then
+    echo "error: Failed to install Git."
+    exit 1
+else
+    echo "Git installed successfully."
+fi  
