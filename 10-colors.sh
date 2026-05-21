@@ -5,15 +5,18 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-    if [ $1 -ne 0 ]; then
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
         echo -e "$2....$R FAILURE"    
         exit 1
     else
         echo -e "$2....$G SUCCESS"
     fi
-
 }
-if [ $USERID -ne 0 ]; then
+
+if [ $USERID -ne 0 ] 
+then
     echo "error: This script must be run as root."
     exit 1
 fi
